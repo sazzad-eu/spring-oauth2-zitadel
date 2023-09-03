@@ -1,0 +1,20 @@
+server:
+  port: 9090
+app:
+  end-session:
+    url: https://sazzad-w56qou.zitadel.cloud/oidc/v1/end_session
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          zitadel:
+            issuerUri: https://sazzad-w56qou.zitadel.cloud
+            user-name-attribute: preferred_username
+        registration:
+          zitadel:
+            client-id: ${ZITADEL_CLIENT_ID:CLIENT_ID}
+            client-secret: ${ZITADEL_CLIENT_SECRET:SECRET}
+            client-authentication-method: client_secret_basic
+            authorizationGrantType: authorization_code
+            scope: ["openid", "profile", "email"]
