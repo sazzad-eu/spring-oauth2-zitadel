@@ -10,6 +10,6 @@ FROM openjdk:17-jdk-slim
 
 EXPOSE 9090
 
-COPY --from=build /build/libs/demo-1.jar app.jar
+COPY --from=build /build/libs/spring-security-oauth-zitadel-1.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
